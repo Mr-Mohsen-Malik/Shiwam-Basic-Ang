@@ -1,1 +1,0 @@
-# Shiwam-Basic-Ang
