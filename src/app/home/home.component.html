@@ -1,0 +1,8 @@
+<ng-template #anonymaouUser>
+    <h1>Welcome User,</h1>
+    <p>Please Login/ Sign up to enjoy our limitless services and more...</p>
+</ng-template>
+<div *ngIf="userIsAuthenticated; else anonymaouUser ">
+    <h1>Welcome {{user.Na}},</h1>
+    <p>Please Login/ Sign up to enjoy our limitless services and more...</p>
+</div>

@@ -1,0 +1,39 @@
+<div *ngIf="isLoading" class="spinner-border" role="status"></div>
+
+<form (submit)="onLogin(loginForm)" *ngIf="!isLoading" 
+#loginForm="ngForm" class="text-center border border-light p-5">
+  <p class="h4 mb-4">Login</p>
+  <div class="form-group">
+    <input ngModel type="email" name="email" id="email" class="form-control mb-4" placeholder="E-mail" 
+    #email="ngModel" 
+    required email>
+    <div class="alert alert-danger" *ngIf="email.touched && email.invalid">Please enter a valid email.</div>
+  </div> 
+  <div class="form-group">
+    <input ngModel type="password" name="password" id="password" class="form-control mb-4" placeholder="Password" 
+    #password="ngModel" required>
+    <div class="alert alert-danger" *ngIf="password.touched && password.invalid">Please enter a valid password.</div>
+  </div> 
+  <button mdbBtn color="info" block="true" class="my-4"  *ngIf="!isLoading">Login</button>
+  <p>Not a member?
+    <a routerLink="/auth/signup">Sign up</a>
+  </p>
+
+     <!-- Social login -->
+     <!--
+  <p>or sign in with:</p>
+
+  <a type="button" class="light-blue-text mx-2">
+    <mdb-icon fab icon="facebook"></mdb-icon>
+  </a>
+  <a type="button" class="light-blue-text mx-2">
+    <mdb-icon fab icon="twitter"></mdb-icon>
+  </a>
+  <a type="button" class="light-blue-text mx-2">
+    <mdb-icon fab icon="linkedin"></mdb-icon>
+  </a>
+  <a type="button" class="light-blue-text mx-2">
+    <mdb-icon fab icon="github"></mdb-icon>
+  </a> -->
+
+</form>
